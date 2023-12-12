@@ -1,0 +1,46 @@
+
+public class SudokoMain {
+
+    public static void main(String[] args) {
+
+        // int[][] board = {
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        // { 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+        // sudoko.setBoard(board);
+        /*
+         * if (sudoko.solve()) {
+         * System.out.println("Solved succcessfull!");
+         * } else {
+         * System.out.println("Solved Falied!");
+         * }
+         * printBoard(sudoko);
+         * 
+         */
+
+        Sudoko sudoko = new Sudoko();
+        MrUI window = new MrUI(sudoko, "Title", 500, 600);
+    }
+
+    public static void printBoard(Sudoko board) {
+        for (int row = 0; row < 9; row++) {
+            if (row % 3 == 0 && row != 0) {
+                System.out.println("-----------");
+            }
+            for (int col = 0; col < 9; col++) {
+                if (col % 3 == 0 && col != 0) {
+                    System.out.print("|");
+                }
+                System.out.print(board.get(row, col));
+            }
+            System.out.println();
+        }
+    }
+}
